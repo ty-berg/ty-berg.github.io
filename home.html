@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Screen Reader Accessibility Tutorial</title>
+    <link rel="stylesheet" href="styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+</head>
+<body id="body" class="light">
+    <button type="button" id="light-or-dark" class="button-light" onclick="lightSwitch();">LIGHT MODE</button>
+    <button type="button" id="animations" class="button-light" onclick="animationSwitch();">ANIMATION ON</button>
+    <h1 class="color-changing-light" id="heading" tabindex="0">Screen Reader Accessibility Tutorial</h1>
+    <nav>
+        <ul>
+            <li><a id="nav" class="nav-links-light" href="#introduction">Introduction</a></li>
+            <li><a id="nav1" class="nav-links-light" href="#html">HTML Structure</a></li>
+            <li><a id="nav2" class="nav-links-light" href="#css">CSS Styling</a></li>
+            <li><a id="nav3" class="nav-links-light" href="#js">JavaScript Enhancements</a></li>
+            <li><a id="nav4" class="nav-links-light" href="#conclusion">Conclusion</a></li>
+        </ul>
+    </nav>
+    
+    <h2 id="introduction" tabindex="0">Introduction</h2>
+    <p>Welcome to this tutorial on how to develop a screen reader accessible webpage! In this tutorial, we will be covering the basics of how to create a webpage that is accessible for screen reader users.
+    Before getting started on designing an accessible website you should download a tool like <a href="https://wave.webaim.org/">WAVE</a> which gives you an automatic accessibility evalutation.
+    Also be sure to familiarize yourself with the <a href="https://www.w3.org/TR/WCAG21/">WCAG 2.1 guidelines </a>. The purpose of this tutorial is to provide a simple explanation of how you can meet some of these guidelines.</p>
+    
+    <h2 id="html" tabindex="0">HTML Structure</h2>
+    <p>One of the most important things to consider when creating a screen reader accessible webpage is the HTML structure. Here are a few tips:</p>
+    <ul>
+        <li>Use proper semantic HTML tags such as <code>&lt;h&gt;</code> and <code>&lt;nav&gt;</code> to provide structure and context for the content.</li>
+            <ul class="no-bullets">
+                <li>Tip: The use of <code>&lt;h&gt;</code> tags are very useful when trying to navigate with a screen-reader. By using <code>&lt;h1&gt;</code> for the title of the webpage and <code>&lt;h2&gt;</code> for sections under
+                that you can <br/>provide a logical structure to your webpage.</li>
+                <li>For example:</li>
+                   <li><code>&lt;h1&gt;</code> Title of Page <code>&lt;/h1&gt;</code> <br/>
+                    &emsp;<code>&lt;h2&gt;</code> Section 1 <code>&lt;/h2&gt;</code> <br/>
+                    &emsp;<code>&lt;h2&gt;</code> Section 2 <code>&lt;/h2&gt;</code> <br/>
+                    &emsp;&emsp;<code>&lt;h3&gt;</code> Sub-Section <code>&lt;/h3&gt;</code> <br/>
+                    &emsp;&emsp; *Some content goes here*</li>
+            </ul>
+        <li>Make sure that all non-text elements such as images, buttons, and links have descriptive alternative text using the <code>alt</code> attribute.</li>
+            <ul class="no-bullets">
+                <li>One common mistake that's often made by web developers is that they provide important information in an inaccessible way. For example providing a phone number in an image without proper alternative text.</li>
+                <li>Here's an example of a phone number as an image:</li>
+                <img src="/Users/tylerberg/Desktop/Accessible Project/images/phone-number.png" alt="phone number in an image: 123-456-7890"/>
+                <li>Rather than providing this important information as an image, if possible it's better to display it as text so the screen reader can convey it to the user properly.</li>
+                <li>Here's an example of some text styled to display the same phone number in the same way as the image but with greater screen reader accessiblity:</li>
+                <li class="phone-number">123-456-7890</li>
+            </ul>
+        <li>Similarly to images, make sure that all videos on your site are screen reader accessible. Make sure that they can be played by using just the keyboard. The user must be able to tab to the video and play it without needing to use a mouse.
+            Another key accessibility concern with videos is closed captioning, although this doesn't have to do with screen reader accessibility, you should always provide captions for any video you have on your webpage. An easy way to create
+            captions for your video is by uploading it to <a href="https://www.youtube.com/">YouTube</a> and generating automatic captions that you can then go through and edit. After uploading the video you can just link it on your webpage.
+        </li>
+        <li>Another key area which is often forgetten about when it comes to screen reader accessibility is forms</li>
+            <ul>
+                <li>Be sure to provide proper labels for each form item be using the <code>&lt;label&gt;</code> tag.</li>
+                <li>Placeholder text is not a replacement for labels as placeholders are not treated the same in screen readers. Placeholders are also not supported across all assistive techologies and are not displayed in older browsers.</li>
+                <li>Here's an example of form labeling:<br/>
+                    <code>&lt;label for="email"&gt;Email: &lt;/label&gt;&lt;input type="email" id="email" placeholder="joe@example.org"&gt;</code>
+                </li>
+            </ul>
+        <li>Provide skip links so screen reader users are able to more easily navigate the page. These can be found at the top of this webpage. Each link allows the user to navigate to a different section of the webpage without scrolling.</li>
+        <li>Use ARIA attributes such as <code>role</code>, <code>aria-label</code>, and <code>aria-describedby</code> to provide additional context and information for screen reader users.</li>
+        <li>One of the biggest things that screen reader users struggle with is "not knowing what they don't know." Users that utilize a screen reader won't know whether information is inaccessible to
+            them or if its just not provided. As discussed earlier, by providing important information in images without proper labeling, screen reader users may just assume that the information is not
+            on the page. Be sure to properly label and describe all important elements of the page so that the screen reader user is able to obtain the same information as a user not using using a 
+            screen reader.
+        <li>Some other simple tips that will allow your website to be more accessible are:
+            <ul > 
+                <li>Provide a light and dark mode. Some users may find content on a webpage easier to understand with a dark versus a light background so providing this simple feature 
+                    can go a long way.
+                </li>
+                <li>Many web developers want to make interesting dynamic websites but often forget that animations and flashing colors might hurt some users. Be sure to provide users with the option to disable animations and be provided with a
+                    static webpage easily. You can see examples of these two features implemented on this webpage.
+                </li>
+            </ul>
+        </li>
+        </li>
+    </ul>
+    
+    <h2 id="css" tabindex="0">CSS Styling</h2>
+    <p>While CSS styling is not directly related to screen-reader accessibility, it can have an impact on the user experience and general accessibility. Here are a few tips:</p>
+    <ul>
+        <li>Use high contrast colors to make sure that text is easy to read.</li>
+        <li>Make sure that font sizes are not too small and that line heights are appropriate to make the text easy to read.</li>
+        <li>Use CSS to hide any visual elements that are not relevant to screen reader users, but make sure that they are still accessible using keyboard navigation.</li>
+    </ul>
+    
+    <h2 id="js" tabindex="0">JavaScript Enhancements</h2>
+    <p>JavaScript can be used to enhance the accessibility of a webpage. Here are a few tips:</p>
+    <ul>
+        <li>Use JavaScript to add keyboard shortcuts for frequently used actions to make it easier for screen reader users to navigate the webpage.</li>
+        <li>Use JavaScript to dynamically update the content on the page without requiring a full page refresh. This can make it easier for screen-reader users to navigate and understand the content.</li>
+        <li>Use ARIA attributes such as <code>aria-live</code> and <code>aria-atomic</code> to make sure that any dynamically updated content is properly announced to screen-reader users.</li>
+    </ul>
+    
+    <h2 id="conclusion" tabindex="0">Conclusion</h2>
+    <p>By following these tips for HTML structure, CSS styling, and JavaScript enhancements, you can create a screen-reader accessible webpage that provides an excellent user experience for all users, regardless of their abilities. If you have any questions or feedback on this tutorial, please let us know!</p>
+</body>
+</html>
+        
