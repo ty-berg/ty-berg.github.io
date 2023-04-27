@@ -12,6 +12,10 @@ body.dark{
 	margin: 20px;
 }
 
+.phone{
+	scale: .8;
+}
+
 
 body h1{
 	text-align: center;
